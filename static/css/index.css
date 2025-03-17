@@ -1,0 +1,99 @@
+/* 强制覆盖其他样式 */
+.marquee-item {
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: white !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 任务类别颜色 */
+.addition { background-color: #f2e17d !important; }  /* 金色 */
+.removal { background-color: #ff6f6d !important; }   /* 橙红色 */
+.swap { background-color: #61b0ff !important; }      /* 道奇蓝 */
+.color { background-color: #79de79 !important; }     /* 石灰绿 */
+.env { background-color: #b281e1 !important; }       /* 蓝紫色 */
+.style { background-color: #FF69B4 !important; }     /* 热粉色 */
+.grounding { background-color: #f1bb79 !important; } /* 暗橙色 */
+.reasoning { background-color: #91b2b3 !important; } /* 深青色 */
+
+/* 让文字更清晰 */
+.marquee-item p {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #000 !important; /* 强制使用黑色文字 */
+}
+
+
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-block {
+  width: 100%;
+  height: 280px; /* 控制每排的高度 */
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.marquee-inner {
+  display: flex;
+  gap: 15px; /* 控制间距 */
+  width: 200%;
+  position: absolute;
+}
+
+.marquee-item {
+  width: calc(100% / 6 - 15px); /* 让一排 6 个 */
+  height: 240px;
+  background: #ececec;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  transition: all .3s ease-out;
+}
+
+.marquee-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.marquee-item p {
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* 滚动动画 */
+@keyframes marqueeLeft {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+
+@keyframes marqueeRight {
+  0% { left: -100%; }
+  100% { left: 0; }
+}
+
+.to-left {
+  animation: marqueeLeft 30s linear infinite;
+}
+
+.to-right {
+  animation: marqueeRight 30s linear infinite;
+}
+
+.title.is-3 {
+  text-align: center;
+  width: 100%;
+}

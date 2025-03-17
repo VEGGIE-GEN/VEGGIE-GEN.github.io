@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="VEGGIE: Instructional Editing and Reasoning Video Concepts with Grounded Generation"/>
+  <meta property="og:description" content="VEGGIE: Instructional Editing and Reasoning Video Concepts with Grounded Generation"/>
+  <meta property="og:url" content="https://VEGGIE-GEN.github.io/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/veggie.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="VEGGIE: Instructional Editing and Reasoning Video Concepts with Grounded Generation">
+  <meta name="twitter:description" content="VEGGIE: Instructional Editing and Reasoning Video Concepts with Grounded Generation">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="./static/images/teaser.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="video caption, video inpaitning, video generation, genai, MLLM, video diffusion">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>VEGGIE</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/comic-mono@0.0.1/index.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+	    tex2jax: {
+	        inlineMath: [['$','$'], ['\\(','\\)']],
+	        processEscapes: true
+	    }
+	});
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
+    </script>
+    <script>
+      window.onload = function() {
+          window.scrollTo(0, 0);
+      };
+  </script>
+<script src="static/js/index.js"></script>
+<link rel="icon" type="image/x-icon" href="static/images/veggie.png">
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">
+              <img style="max-height: 36px;" src="./static/veggie.ico"/>
+              VEGGIE: Instructional Editing and Reasoning Video Concepts with Grounded Generation
+              </h1>                    
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">
+              <a href="https://yui010206.github.io/" target="_blank">Shoubin Yu<sup>*</sup></a>
+            </span> &nbsp;
+            <span class="author-block" , style="padding-left:30px">
+              <a href="https://difanliu.github.io/" target="_blank">Difan Liu<sup>*</sup></a>
+            </span> &nbsp;
+            <span class="author-block" , style="padding-left:30px">
+              <a href="https://mars-tin.github.io/">Ziqiao Ma<sup>*</sup></a>
+            </span>
+            <br>
+            <span class="author-block" , style="padding-left:30px">
+              <a href="https://yiconghong.me/">Yicong Hong</a>
+            </span>
+            <span class="author-block" , style="padding-left:30px">
+              <a href="https://yzhou359.github.io/">Yang Zhou</a>
+            </span>
+            <span class="author-block" , style="padding-left:30px">
+              <a href="https://research.adobe.com/person/hao-tan/">Hao Tan</a>
+            </span>
+            <span class="author-block" , style="padding-left:30px">
+              <a href="https://web.eecs.umich.edu/~chaijy/">Joyce Chai</a>
+            </span>
+            <span class="author-block" , style="padding-left:30px">
+              <a href="https://www.cs.unc.edu/~mbansal/">Mohit Bansal</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Adobe Research</span> &nbsp;&nbsp;&nbsp;
+            <span class="author-block">University of Michigan</span> &nbsp;&nbsp;&nbsp;
+            <span class="author-block">UNC Chapel Hill</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">*: equal contribution</span> <br>
+          </div>
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                      
+                       <!-- ArXiv abstract Link -->
+                       <span class="link-block">
+                        <a href="https://arxiv.org/abs/2405.18406" class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                          </span>
+                          <span>Paper</span>
+                        </a>
+                      </span>
+                  <!-- Github link -->
+                <span class="link-block">
+									<a href="https://github.com/Yui010206/" class="external-link button is-normal is-rounded is-dark">
+										<span class="icon">
+											<i class="fab fa-github"></i>
+										</span>
+										<span>Code (coming soon)</span>
+									</a>
+								</span>
+                <span class="link-block">
+                  <a href="https://huggingface.co/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <img style="max-width: 16px;" src="./static/hf_fa.ico" alt="Hugging Face"/>
+                      <!-- <i class="fas fa-file-pdf"></i> -->
+                    </span>
+                    <span>Benchmark</span>
+                  </a>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="body">
+    <div class="container">
+      <center>
+        <img src="./static/images/teaser.png" width="80%">
+      </center>
+      <div class="content has-text-justified" style="margin: auto; width: 70%;">
+          <b>Figure 1:</b> We propose VEGGIE, a unified versatile video generative model that handles various tasks for both video concept grounding and editing according to user instructions. With VEGGIE, users can locate, add, delete, and swap concepts in a given video through diverse instruction formats (direct referring instruction or reasoning-demanding questions). 
+          Users can also edit videos with multimodal instruction empowered by MLLM, enabling video editing from a reference image.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recent video diffusion models have enhanced video editing, but it remains challenging to handle instructional editing and diverse tasks (e.g., adding, removing, changing) within a unified framework.
+In this paper, we introduce VEGGIE, a Video Editor with Grounded Generation from Instructions, a simple end-to-end framework that unifies video concept editing, grounding, and reasoning based on diverse user instructions. 
+Specifically, given a video and text query, VEGGIE first utilizes an MLLM to interpret user intentions in instructions and ground them to the video contexts, generating frame-specific grounded task queries for pixel-space responses. 
+A diffusion model then renders these plans and generates edited videos that align with user intent.
+To support diverse tasks and complex instructions, we employ a curriculum learning strategy: first aligning the MLLM and video diffusion model with large-scale instructional image editing data, followed by end-to-end fine-tuning on high-quality multitask video data. 
+Additionally, we introduce a novel data synthesis pipeline to generate paired instructional video editing data for model training. 
+It transforms static image data into diverse, high-quality video editing samples by leveraging Image-to-Video models to inject dynamics.
+VEGGIE shows strong performance in instructional video editing with different editing skills, outperforming the best instructional baseline as a versatile
+model, while other models struggle with multi-tasking.
+VEGGIE also excels in video object grounding and reasoning segmentation, where other baselines fail. 
+We further reveal how the multiple tasks help each other and highlight promising applications like zero-shot multimodal instructional and in-context video editing.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">VEGGIE: Video Editor with Grounded Generation from Instructions,</h2>
+        <div class="content has-text-justified">
+          <img src="./static/images/veggie_method.png">
+        </div>
+        <p class="content has-text-justified">
+         <b>Figure2: Overview of our proposed end-to-end VEGGIE framework.</b>. Our Multimodal Large Language Model first understands input video
+         frames and diverse user instructions, then it generates frame-wise reasoning queries that maintain per-frame editing conditions for the video
+         diffusion model. The video diffusion model will render the MLLM-generated conditions to the pixel space for diverse tasks, including video
+         editing (add/remove/change), video grounding, and video reasoning segmentation with questions. We only apply diffusion loss for the whole
+         pipeline training.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- End paper abstract -->
+
+<section class="section hero is-light">
+  <h2 class="title is-3 has-text-centered">VEGGIE Visualization Gallery</h2>
+  <div class="is-max-desktop">
+    <div class="marquee-wrapper">
+
+      <!-- 第1排：to-left -->
+      <div class="marquee-block">
+        <div class="marquee-inner to-left">
+          <!-- 1 -->
+          <div class="marquee-item grounding">
+            <img src="./gifs/Grounding_1.gif" alt="">
+            <p>[Grounding] Could you label bear in these video frames with red color masks?</p>
+          </div>
+          <!-- 2 -->
+          <div class="marquee-item addition">
+            <img src="./gifs/Addition_5.gif" alt="">
+            <p>[Addition] Add many fish around the woman</p>
+          </div>
+
+          <!-- 3 -->
+          <div class="marquee-item swap">
+            <img src="./gifs/Swap_15.gif" alt="">
+            <p>[Swap] Replace the train with cupcakes and the ground with a table</p>
+          </div>
+          <!-- 4 -->
+
+          <div class="marquee-item removal">
+            <img src="./gifs/Removal_13.gif" alt="">
+            <p>[Removal] Please remove the man in black in given video frames.</p>
+          </div>
+
+
+          <!-- 5 -->
+          <div class="marquee-item grounding">
+            <img src="./gifs/Grounding_8.gif" alt="">
+            <p>[Grounding] Could you locate the cup in these video frames with red color masks?</p>
+          </div>
+          <!-- 6 -->
+
+          <div class="marquee-item env">
+            <img src="./gifs/Env_10.gif" alt="">
+            <p>[Env] Make it beside the sea.</p>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- 第2排：to-right -->
+      <div class="marquee-block">
+        <div class="marquee-inner to-right">
+          <!-- 7 -->
+
+          <div class="marquee-item removal">
+            <img src="./gifs/Removal_9.gif" alt="">
+            <p>[Removal] Please remove man in given video frames.</p>
+          </div>
+
+
+
+          <!-- 8 -->
+
+          <div class="marquee-item reasoning">
+            <img src="./gifs/Reasoning_10.gif" alt="">
+            <p>[Reasoning] What object might be taken if the woman is thirsty? Highlight your answer with red masks.</p>
+          </div>
+
+          <!-- 9 -->
+          <div class="marquee-item style">
+            <img src="./gifs/Style_4.gif" alt="">
+            <p>[Style] make it Chinese ink style</p>
+          </div>
+          <!-- 10 -->
+          <div class="marquee-item addition">
+            <img src="./gifs/Addition_13.gif" alt="">
+            <p>[Addition] Add a flying giant seagull over the sea surface</p>
+          </div>
+
+          <!-- 11 -->
+
+          <div class="marquee-item addition">
+            <img src="./gifs/Addition_6.gif" alt="">
+            <p>[Addition] Please add a ball in the given video frames.</p>
+          </div>
+
+          <!-- 12 -->
+
+          <div class="marquee-item grounding">
+            <img src="./gifs/Grounding_7.gif" alt="">
+            <p>[Grounding] Could you locate the cup in these video frames with red color masks?</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 第3排：to-left -->
+      <div class="marquee-block">
+        <div class="marquee-inner to-left">
+          <!-- 13 -->
+          <div class="marquee-item grounding">
+            <img src="./gifs/Grounding_10.gif" alt="">
+            <p>[Grounding] Could you label the woman's clothes in these video frames with red color masks?</p>
+          </div>
+          <!-- 14 -->
+          <div class="marquee-item color">
+            <img src="./gifs/Color_8.gif" alt="">
+            <p>[Color] Make the girl in a pink shirt</p>
+          </div>
+          <!-- 15 -->
+          <div class="marquee-item style">
+            <img src="./gifs/Style_14.gif" alt="">
+            <p>[Style] make it in Monochrome Sketch Style.</p>
+          </div>
+          <!-- 16 -->
+          <div class="marquee-item addition">
+            <img src="./gifs/Addition_9.gif" alt="">
+            <p>[Addition] Please add boys in the video.</p>
+          </div>
+          <!-- 17 -->
+          <div class="marquee-item style">
+            <img src="./gifs/Style_11.gif" alt="">
+            <p>[Style] make it in Van Gogh Style.</p>
+          </div>
+          <!-- 18 -->
+          <div class="marquee-item addition">
+            <img src="./gifs/Addition_10.gif" alt="">
+            <p>[Addition] Add blooming flowers to the mountain trail</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第4排：to-right -->
+      <div class="marquee-block">
+        <div class="marquee-inner to-right">
+          <!-- 19 -->
+          <div class="marquee-item removal">
+            <img src="./gifs/Removal_13.gif" alt="">
+            <p>[Removal] Please remove the man in black in given video frames.</p>
+          </div>
+          <!-- 20 -->
+          <div class="marquee-item color">
+            <img src="./gifs/Color_3.gif" alt="">
+            <p>[Color] Make the swan white</p>
+          </div>
+          <!-- 21 -->
+
+          <div class="marquee-item color">
+            <img src="./gifs/Color_11.gif" alt="">
+            <p>[Color] Make the rhinocero furry</p>
+          </div>
+
+          <!-- 22 -->
+          <div class="marquee-item addition">
+            <img src="./gifs/Addition_1.gif" alt="">
+            <p>[Addition] Please add a hat in the given video frames.</p>
+          </div>
+          <!-- 23 -->
+          <div class="marquee-item env">
+            <img src="./gifs/Env_4.gif" alt="">
+            <p>[Env] Make it on the beach.</p>
+          </div>
+          <!-- 24 -->
+          <div class="marquee-item style">
+            <img src="./gifs/Style_7.gif" alt="">
+            <p>[Style] Make it oil painting style</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 第5排：to-left -->
+      <div class="marquee-block">
+        <div class="marquee-inner to-left">
+          <!-- 25 -->
+          <div class="marquee-item env">
+            <img src="./gifs/Env_7.gif" alt="">
+            <p>[Env] Make it raining, and add falling raindrops on the large rocks in the forest</p>
+          </div>
+          <!-- 26 -->
+          <div class="marquee-item style">
+            <img src="./gifs/Style_10.gif" alt="">
+            <p>[Style] make it in Japanese ukiyo e Style.</p>
+          </div>
+          <!-- 27 -->
+          <div class="marquee-item removal">
+            <img src="./gifs/Removal_8.gif" alt="">
+            <p>[Removal] remove the woman.</p>
+          </div>
+          <!-- 28 -->
+
+          <div class="marquee-item reasoning">
+            <img src="./gifs/Reasoning_2.gif" alt="">
+            <p>[Reasoning] Which is the tallest building? highlight your answer with red masks.</p>
+          </div>
+
+          <!-- 29 -->
+
+          <div class="marquee-item reasoning">
+            <img src="./gifs/Reasoning_14.gif" alt="">
+            <p>[Reasoning] Who runs faster? highlight your answer with red masks.</p>
+          </div>
+
+          <!-- 30 -->
+          <div class="marquee-item swap">
+            <img src="./gifs/Swap_3.gif" alt="">
+            <p>[Swap] replace the cow with horse.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第6排：to-right -->
+      <div class="marquee-block">
+        <div class="marquee-inner to-right">
+          <!-- 31 -->
+          <div class="marquee-item addition">
+            <img src="./gifs/Addition_16.gif" alt="">
+            <p>[Addition] add a sunglass on her face.</p>
+          </div>
+
+          <!-- 32 -->
+          <div class="marquee-item removal">
+            <img src="./gifs/Removal_16.gif" alt="">
+            <p>[Removal] Please remove the woman in the video.</p>
+          </div>
+
+          <!-- 33 -->
+          <div class="marquee-item swap">
+            <img src="./gifs/Swap_4.gif" alt="">
+            <p>[Swap] Change the food to a birthday cake.</p>
+          </div>
+          <!-- 34 -->
+          <div class="marquee-item grounding">
+            <img src="./gifs/Grounding_14.gif" alt="">
+            <p>[Grounding] Could you label the woman in these video frames with red color masks?</p>
+          </div>
+          <!-- 35 -->
+          <div class="marquee-item grounding">
+            <img src="./gifs/Grounding_13.gif" alt="">
+            <p>[Grounding] Could you label the walruse in these video frames with red color masks?</p>
+          </div>
+          <!-- 36 -->
+          <div class="marquee-item env">
+            <img src="./gifs/Env_3.gif" alt="">
+            <p>[Env] Make it rainy.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第7排：to-left -->
+      <div class="marquee-block">
+        <div class="marquee-inner to-left">
+          <!-- 37 -->
+          <div class="marquee-item color">
+            <img src="./gifs/Color_6.gif" alt="">
+            <p>[Color] Change the milk to black coffee.</p>
+          </div>
+          <!-- 38 -->
+
+          <div class="marquee-item addition">
+            <img src="./gifs/Addition_12.gif" alt="">
+            <p>[Addition] Please add more buildings beside the road in the given video frames.</p>
+          </div>
+
+          <!-- 39 -->
+
+          <div class="marquee-item swap">
+            <img src="./gifs/Swap_5.gif" alt="">
+            <p>[Swap] change the bowl to pizza.</p>
+          </div>
+
+          <!-- 40 -->
+          <div class="marquee-item grounding">
+            <img src="./gifs/Grounding_20.gif" alt="">
+            <p>[Grounding] Could you highlight the zebra in these video frames with red color masks?</p>
+          </div>
+          <!-- 41 -->
+          <div class="marquee-item env">
+            <img src="./gifs/Env_8.gif" alt="">
+            <p>[Env] change it in forest.</p>
+          </div>
+          <!-- 42 -->
+          <div class="marquee-item color">
+            <img src="./gifs/Color_1.gif" alt="">
+            <p>[Color] Make him looks like White Ancient Greek Sculpture.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第8排：to-right -->
+      <div class="marquee-block">
+        <div class="marquee-inner to-right">
+          <!-- 43 -->
+          <div class="marquee-item swap">
+            <img src="./gifs/Swap_8.gif" alt="">
+            <p>[Swap] Replace the cup with a bottle of flower.</p>
+          </div>
+          <!-- 44 -->
+
+          <div class="marquee-item removal">
+            <img src="./gifs/Removal_4.gif" alt="">
+            <p>[Removal] Please remove the car in the video.</p>
+          </div>
+
+          <!-- 45 -->
+
+          <div class="marquee-item style">
+            <img src="./gifs/Style_6.gif" alt="">
+            <p>[Style] Make it Cartoon style</p>
+          </div>
+
+          <!-- 46 -->
+          <div class="marquee-item swap">
+            <img src="./gifs/Swap_16.gif" alt="">
+            <p>[Swap] change the woman to a bear.</p>
+          </div>
+
+          <!-- 47 -->
+          <div class="marquee-item style">
+            <img src="./gifs/Style_7.gif" alt="">
+            <p>[Style] Make it oil painting style</p>
+          </div>
+
+          <!-- 48 -->
+          <div class="marquee-item reasoning">
+            <img src="./gifs/Reasoning_5.gif" alt="">
+            <p>[Reasoning] What can be used to maintain the food? label your answer using red colored masks.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 第9排：to-left -->
+      <div class="marquee-block">
+        <div class="marquee-inner to-left">
+          <!-- 49 -->
+          <div class="marquee-item swap">
+            <img src="./gifs/Swap_12.gif" alt="">
+            <p>[Swap] Replace the person with the Ironman</p>
+          </div>
+          <!-- 50 -->
+
+          <div class="marquee-item color">
+            <img src="./gifs/Color_2.gif" alt="">
+            <p>[Color] Make the bear red.</p>
+          </div>
+
+          <!-- 51 -->
+          <div class="marquee-item reasoning">
+            <img src="./gifs/Reasoning_1.gif" alt="">
+            <p>[Reasoning] What can be used for heating food? highlight your answer with red masks.</p>
+          </div>
+          <!-- 52 -->
+          <div class="marquee-item addition">
+            <img src="./gifs/Grounding_17.gif" alt="">
+            <p>[Grounding] Please locate the laptop across the video frames and use blue masks to mark them.</p>
+          </div>
+          <!-- 53 -->
+          <div class="marquee-item env">
+            <img src="./gifs/Env_2.gif" alt="">
+            <p>[Env] Replace the background with the desert</p>
+          </div>
+          <!-- 54 -->
+
+          <div class="marquee-item env">
+            <img src="./gifs/Env_16.gif" alt="">
+            <p>[Env] Make it autumn.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Quantative Results</h2>
+        <div class="content has-text-justified">
+          <img src="static/images/result.png">
+        </div>
+        <p class="content has-text-justified">
+          we evaluate 7 different models on VEG-Bench
+          across 8 distinct editing skills. Overall, VEGGIE demonstrates
+          the best performance among instructional video editing
+          models. Compared to VEGGIE, non-instructional models
+          often struggle with concept removal and addition. This
+          limitation arises because these models rely on attention control
+          or additional conditions (e.g., depth maps) that impose
+          strong priors, constraining the model and making object addition
+          or removal challenging. We also observe that InsV2V
+          achieves high scores in quality and smoothness metrics, but
+          underperforms in alignment and MLLM judgment, which
+          demand faithful semantic changes. InsV2V often makes minimal changes
+          to the input video, resulting in high video quality but unfaithful
+          outputs. In contrast, VEGGIE strikes a better balance,
+          delivering both high-quality visuals and accurate semantic
+          alignment with the intended edits.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+       
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{yu2025veggie,
+        title={VEGGIE: Instructional Editing and Reasoning Video Concepts with Grounded Generation}, 
+        author={Shoubin Yu and Difan Liu and Ziqiao Ma and Yicong Hong and Yang Zhou and Hao Tan and Joyce Chai and Mohit Bansal},
+        year={2025},
+        journal={arXiv},
+}
+  </code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built upon the <a href="https://fate-zero-edit.github.io/">FateZero</a> project homepage (using <a href="https://github.com/vinthony/project-page-template">modification version</a> of <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> from <a href="https://github.com/vinthony">vinthony</a>).
+            You are free to borrow this website. We just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
