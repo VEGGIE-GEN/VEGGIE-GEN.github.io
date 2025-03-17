@@ -35,9 +35,9 @@ def make_gif_loop_forever(input_path, output_path):
 
 if __name__ == "__main__":
     import os
-    for file in os.listdir("flatten"):
+    for file in os.listdir("./"):
         if file.endswith(".gif"):
-            input_gif = f"flatten/{file}"
-            output_gif = f"flatten/{file}"
+            input_gif = f".//{file}"
+            output_gif = f".//{file}"
             make_gif_loop_forever(input_gif, output_gif)
             print(f"已将 {input_gif} 转换为无限循环的 {output_gif}")
