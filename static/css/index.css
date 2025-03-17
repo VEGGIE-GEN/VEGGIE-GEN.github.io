@@ -121,11 +121,11 @@
 }
 
 .to-left {
-  animation: marqueeLeft 30s linear infinite;
+  animation: marqueeLeft 40s linear infinite;
 }
 
 .to-right {
-  animation: marqueeRight 30s linear infinite;
+  animation: marqueeRight 40s linear infinite;
 }
 
 .title.is-3 {
