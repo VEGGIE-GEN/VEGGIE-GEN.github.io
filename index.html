@@ -159,7 +159,7 @@
         <img src="./static/images/teaser.png" width="70%">
       </center>
       <div class="content has-text-justified" style="margin: auto; width: 70%;">
-          <b>Figure 1:</b> We propose VEGGIE, a unified versatile video generative model that handles various tasks for both video concept grounding and editing according to user instructions. With VEGGIE, users can locate, add, delete, and swap concepts in a given video through diverse instruction formats (direct referring instruction or reasoning-demanding questions). 
+          <b>Figure 1:</b> We propose VEGGIE, a unified versatile video generative model that handles various tasks for both video concept grounding and editing according to user instructions. With VEGGIE, users can locate, add, delete, and change concepts in a given video through diverse instruction formats (direct referring instruction or reasoning-demanding questions). 
           Users can also edit videos with multimodal instruction empowered by MLLM, enabling video editing from a reference image.
       </div>
     </div>
@@ -292,10 +292,12 @@ We further reveal how the multiple tasks help each other and highlight promising
             <p>[Style] make it Chinese ink style</p>
           </div>
           <!-- 10 -->
-          <div class="marquee-item addition">
-            <img src="./gifs/Addition_13.gif" alt="">
-            <p>[Addition] Add a flying giant seagull over the sea surface</p>
+
+          <div class="marquee-item color">
+            <img src="./gifs/Color_11.gif" alt="">
+            <p>[Color] Make the rhinocero furry</p>
           </div>
+
 
           <!-- 11 -->
 
@@ -365,10 +367,12 @@ We further reveal how the multiple tasks help each other and highlight promising
           </div>
           <!-- 21 -->
 
-          <div class="marquee-item color">
-            <img src="./gifs/Color_11.gif" alt="">
-            <p>[Color] Make the rhinocero furry</p>
+          <div class="marquee-item addition">
+            <img src="./gifs/Addition_13.gif" alt="">
+            <p>[Addition] Add a flying giant seagull over the sea surface</p>
           </div>
+
+
 
           <!-- 22 -->
           <div class="marquee-item addition">
@@ -632,7 +636,7 @@ We further reveal how the multiple tasks help each other and highlight promising
   <!-- 下方文字说明 -->
   <div class="content has-text-centered" style="margin-top: 1em;">
     <p class="instruction-text" style="color:#000;">
-      [Instruction] Transfer the style in the reference image.
+      Instruction: Transfer the style in the reference image.
     </p>
   </div>
 
@@ -668,7 +672,7 @@ We further reveal how the multiple tasks help each other and highlight promising
   <!-- 下方文字说明 -->
   <div class="content has-text-centered" style="margin-top: 1em;">
     <p class="instruction-text" style="color:#000;">
-      [Instruction] Add the object in the reference image on the women.
+      Instruction: Add the object in the reference image on the women.
     </p>
   </div>
 </section>
@@ -784,6 +788,499 @@ We further reveal how the multiple tasks help each other and highlight promising
   </div>
 
 </section>
+
+
+
+<section class="section">
+  <h2 class="title is-3 has-text-centered">Comparison With Other Methods</h2>
+  <!-- 容器：一行摆 8 个 -->
+  <div class="columns is-gapless is-vcentered is-mobile" style="justify-content:center;">
+    
+    <!-- 单元 1 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">Input Video</p>
+      <img src="static/baselines/input/cat.gif" alt="GIF 1" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 2 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">VidToMe</p>
+      <img src="static/baselines/vidtome/Env.gif" alt="GIF 2" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 3 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">TokenFlow</p>
+      <img src="static/baselines/tokenflow/Env.gif" alt="GIF 3" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 4 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">Flatten</p>
+      <img src="static/baselines/flatten/Env.gif" alt="GIF 4" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 5 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">InstructDiff</p>
+      <img src="static/baselines/instructdiff/Env.gif" alt="GIF 5" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 6 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">LGVI</p>
+      <img src="static/baselines/lgvi/Env.gif" alt="GIF 6" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 7 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">InsV2V</p>
+      <img src="static/baselines/insv2v/Env.gif" alt="GIF 7" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 8 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">VEGGIE</p>
+      <img src="static/baselines/veggie/Env.gif" alt="GIF 8" style="max-width:100%;">
+    </div>
+  </div>
+
+  <!-- 公共 caption -->
+  <p class="has-text-centered" style="margin-top: 1em;">
+    Instruction: Make it on the beach.
+  </p>
+
+  <br>
+
+
+
+  <div class="columns is-gapless is-vcentered is-mobile" style="justify-content:center;">
+    
+    <!-- 单元 1 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">Input Video</p>
+      <img src="static/baselines/input/dog.gif" alt="GIF 1" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 2 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">VidToMe</p>
+      <img src="static/baselines/vidtome/Addition.gif" alt="GIF 2" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 3 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">TokenFlow</p>
+      <img src="static/baselines/tokenflow/Addition.gif" alt="GIF 3" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 4 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">Flatten</p>
+      <img src="static/baselines/flatten/Addition.gif" alt="GIF 4" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 5 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">InstructDiff</p>
+      <img src="static/baselines/instructdiff/Addition.gif" alt="GIF 5" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 6 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">LGVI</p>
+      <img src="static/baselines/lgvi/Addition.gif" alt="GIF 6" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 7 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">InsV2V</p>
+      <img src="static/baselines/insv2v/Addition.gif" alt="GIF 7" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 8 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">VEGGIE</p>
+      <img src="static/baselines/veggie/Addition.gif" alt="GIF 8" style="max-width:100%;">
+    </div>
+  </div>
+
+  <!-- 公共 caption -->
+  <p class="has-text-centered" style="margin-top: 1em;">
+    Instruction: Please add a ball in the given video frames.
+  </p>
+
+
+  <br>
+
+
+  
+  <div class="columns is-gapless is-vcentered is-mobile" style="justify-content:center;">
+    
+    <!-- 单元 1 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">Input Video</p>
+      <img src="static/baselines/input/boat.gif" alt="GIF 1" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 2 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">VidToMe</p>
+      <img src="static/baselines/vidtome/Style.gif" alt="GIF 2" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 3 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">TokenFlow</p>
+      <img src="static/baselines/tokenflow/Style.gif" alt="GIF 3" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 4 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">Flatten</p>
+      <img src="static/baselines/flatten/Style.gif" alt="GIF 4" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 5 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">InstructDiff</p>
+      <img src="static/baselines/instructdiff/Style.gif" alt="GIF 5" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 6 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">LGVI</p>
+      <img src="static/baselines/lgvi/Style.gif" alt="GIF 6" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 7 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">InsV2V</p>
+      <img src="static/baselines/insv2v/Style.gif" alt="GIF 7" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 8 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">VEGGIE</p>
+      <img src="static/baselines/veggie/Style.gif" alt="GIF 8" style="max-width:100%;">
+    </div>
+  </div>
+
+  <!-- 公共 caption -->
+  <p class="has-text-centered" style="margin-top: 1em;">
+    Instruction: Make it chinese ink style.
+  </p>
+
+
+  <br>
+
+
+  
+  <div class="columns is-gapless is-vcentered is-mobile" style="justify-content:center;">
+    
+    <!-- 单元 1 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">Input Video</p>
+      <img src="static/baselines/input/bear.gif" alt="GIF 1" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 2 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">VidToMe</p>
+      <img src="static/baselines/vidtome/Grounding.gif" alt="GIF 2" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 3 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">TokenFlow</p>
+      <img src="static/baselines/tokenflow/Grounding.gif" alt="GIF 3" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 4 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">Flatten</p>
+      <img src="static/baselines/flatten/Grounding.gif" alt="GIF 4" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 5 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">InstructDiff</p>
+      <img src="static/baselines/instructdiff/Grounding.gif" alt="GIF 5" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 6 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">LGVI</p>
+      <img src="static/baselines/lgvi/Grounding.gif" alt="GIF 6" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 7 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">InsV2V</p>
+      <img src="static/baselines/insv2v/Grounding.gif" alt="GIF 7" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 8 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">VEGGIE</p>
+      <img src="static/baselines/veggie/Grounding.gif" alt="GIF 8" style="max-width:100%;">
+    </div>
+  </div>
+
+  <!-- 公共 caption -->
+  <p class="has-text-centered" style="margin-top: 1em;">
+    Instruction: Could you label the bear in these video frames with red color masks?
+  </p>
+
+
+
+  <br>
+
+
+  
+  <div class="columns is-gapless is-vcentered is-mobile" style="justify-content:center;">
+    
+    <!-- 单元 1 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">Input Video</p>
+      <img src="static/baselines/input/ktE5HT0mzPY.gif" alt="GIF 1" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 2 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">VidToMe</p>
+      <img src="static/baselines/vidtome/Swap.gif" alt="GIF 2" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 3 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">TokenFlow</p>
+      <img src="static/baselines/tokenflow/Swap.gif" alt="GIF 3" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 4 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">Flatten</p>
+      <img src="static/baselines/flatten/Swap.gif" alt="GIF 4" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 5 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">InstructDiff</p>
+      <img src="static/baselines/instructdiff/Swap.gif" alt="GIF 5" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 6 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">LGVI</p>
+      <img src="static/baselines/lgvi/Swap.gif" alt="GIF 6" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 7 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">InsV2V</p>
+      <img src="static/baselines/insv2v/Swap.gif" alt="GIF 7" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 8 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">VEGGIE</p>
+      <img src="static/baselines/veggie/Swap.gif" alt="GIF 8" style="max-width:100%;">
+    </div>
+  </div>
+
+  <!-- 公共 caption -->
+  <p class="has-text-centered" style="margin-top: 1em;">
+    Instruction: Replace the cup with a bottle of flower.
+  </p>
+
+
+  <br>
+
+
+  
+  <div class="columns is-gapless is-vcentered is-mobile" style="justify-content:center;">
+    
+    <!-- 单元 1 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">Input Video</p>
+      <img src="static/baselines/input/running.gif" alt="GIF 1" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 2 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">VidToMe</p>
+      <img src="static/baselines/vidtome/Removal.gif" alt="GIF 2" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 3 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">TokenFlow</p>
+      <img src="static/baselines/tokenflow/Removal.gif" alt="GIF 3" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 4 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">Flatten</p>
+      <img src="static/baselines/flatten/Removal.gif" alt="GIF 4" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 5 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">InstructDiff</p>
+      <img src="static/baselines/instructdiff/Removal.gif" alt="GIF 5" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 6 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">LGVI</p>
+      <img src="static/baselines/lgvi/Removal.gif" alt="GIF 6" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 7 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">InsV2V</p>
+      <img src="static/baselines/insv2v/Removal.gif" alt="GIF 7" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 8 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">VEGGIE</p>
+      <img src="static/baselines/veggie/Removal.gif" alt="GIF 8" style="max-width:100%;">
+    </div>
+  </div>
+
+  <!-- 公共 caption -->
+  <p class="has-text-centered" style="margin-top: 1em;">
+    Instruction: Please remove the man in black in given video frames.
+  </p>
+
+
+  <br>
+
+
+  
+  <div class="columns is-gapless is-vcentered is-mobile" style="justify-content:center;">
+    
+    <!-- 单元 1 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">Input Video</p>
+      <img src="static/baselines/input/blackswan.gif" alt="GIF 1" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 2 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">VidToMe</p>
+      <img src="static/baselines/vidtome/Color.gif" alt="GIF 2" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 3 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">TokenFlow</p>
+      <img src="static/baselines/tokenflow/Color.gif" alt="GIF 3" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 4 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">Flatten</p>
+      <img src="static/baselines/flatten/Color.gif" alt="GIF 4" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 5 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">InstructDiff</p>
+      <img src="static/baselines/instructdiff/Color.gif" alt="GIF 5" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 6 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">LGVI</p>
+      <img src="static/baselines/lgvi/Color.gif" alt="GIF 6" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 7 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">InsV2V</p>
+      <img src="static/baselines/insv2v/Color.gif" alt="GIF 7" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 8 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">VEGGIE</p>
+      <img src="static/baselines/veggie/Color.gif" alt="GIF 8" style="max-width:100%;">
+    </div>
+  </div>
+
+  <!-- 公共 caption -->
+  <p class="has-text-centered" style="margin-top: 1em;">
+    Instruction: Make the swan white.
+  </p>
+
+
+  <br>
+
+
+  
+  <div class="columns is-gapless is-vcentered is-mobile" style="justify-content:center;">
+    
+    <!-- 单元 1 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">Input Video</p>
+      <img src="static/baselines/input/BBQ-plate.gif" alt="GIF 1" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 2 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">VidToMe</p>
+      <img src="static/baselines/R.png" alt="GIF 2" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 3 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">TokenFlow</p>
+      <img src="static/baselines/R.png" alt="GIF 3" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 4 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">Flatten</p>
+      <img src="static/baselines/R.png" alt="GIF 4" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 5 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">InstructDiff</p>
+      <img src="static/baselines/instructdiff/Reasoning.gif" alt="GIF 5" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 6 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">LGVI</p>
+      <img src="static/baselines/lgvi/Reasoning.gif" alt="GIF 6" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 7 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">InsV2V</p>
+      <img src="static/baselines/insv2v/Reasoning.gif" alt="GIF 7" style="max-width:100%;">
+    </div>
+
+    <!-- 单元 8 -->
+    <div class="column has-text-centered" style="width:12.5%;">
+      <p class="gif-title">VEGGIE</p>
+      <img src="static/baselines/veggie/Reasoning.gif" alt="GIF 8" style="max-width:100%;">
+    </div>
+  </div>
+
+  <!-- 公共 caption -->
+  <p class="has-text-centered" style="margin-top: 1em;">
+    Instruction: What can be used for heating food? highlight your answer with red masks.
+  </p>
+
+
+  
+</section>
+
 
 
 
