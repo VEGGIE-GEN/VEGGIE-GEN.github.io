@@ -149,11 +149,14 @@
   </div>
 </section>
 
+
+
+
 <section class="hero is-small">
   <div class="body">
     <div class="container">
       <center>
-        <img src="./static/images/teaser.png" width="80%">
+        <img src="./static/images/teaser.png" width="70%">
       </center>
       <div class="content has-text-justified" style="margin: auto; width: 70%;">
           <b>Figure 1:</b> We propose VEGGIE, a unified versatile video generative model that handles various tasks for both video concept grounding and editing according to user instructions. With VEGGIE, users can locate, add, delete, and swap concepts in a given video through diverse instruction formats (direct referring instruction or reasoning-demanding questions). 
@@ -589,6 +592,200 @@ We further reveal how the multiple tasks help each other and highlight promising
     </div>
   </div>
 </section>
+
+
+<section class="section">
+  <!-- 标题 -->
+  <h2 class="title is-3 has-text-centered">Multimodal Instructional Video Editing</h2>
+
+  <!-- 三列布局 (Reference / Input / Output) -->
+  <!-- 加 is-gapless 或 is-variable 来控制列间距 -->
+  <div class="columns is-vcentered is-gapless">
+    
+    <!-- 左列：Reference Image -->
+    <div class="column has-text-centered">
+      <!-- max-width: 50% 可根据需要调小或调大 -->
+      <img src="static/multimodal/ref.jpg" 
+           alt="Reference Image" 
+           style="max-width: 50%; border: 1px solid #ccc; border-radius: 5px;">
+      <p class="mt-2" style="font-weight: bold;">Reference Image</p>
+    </div>
+
+    <!-- 中列：Input Video (GIF) -->
+    <div class="column has-text-centered">
+      <img src="static/multimodal/snow.gif" 
+           alt="Input Video" 
+           style="max-width: 50%; border: 1px solid #ccc; border-radius: 5px;">
+      <p class="mt-2" style="font-weight: bold;">Input Video</p>
+    </div>
+
+    <!-- 右列：Output Video (GIF) -->
+    <div class="column has-text-centered">
+      <img src="static/multimodal/multimodal1.gif" 
+           alt="Output Video" 
+           style="max-width: 50%; border: 1px solid #ccc; border-radius: 5px;">
+      <p class="mt-2" style="font-weight: bold;">Output Video</p>
+    </div>
+
+  </div>
+
+  <!-- 下方文字说明 -->
+  <div class="content has-text-centered" style="margin-top: 1em;">
+    <p class="instruction-text" style="color:#000;">
+      [Instruction] Transfer the style in the reference image.
+    </p>
+  </div>
+
+  <div class="columns is-vcentered is-gapless">
+    
+    <!-- 左列：Reference Image -->
+    <div class="column has-text-centered">
+      <!-- max-width: 50% 可根据需要调小或调大 -->
+      <img src="static/multimodal/hat.png" 
+           alt="Reference Image" 
+           style="max-width: 50%; border: 1px solid #ccc; border-radius: 5px;">
+      <p class="mt-2" style="font-weight: bold;">Reference Image</p>
+    </div>
+
+    <!-- 中列：Input Video (GIF) -->
+    <div class="column has-text-centered">
+      <img src="static/multimodal/woman.gif" 
+           alt="Input Video" 
+           style="max-width: 50%; border: 1px solid #ccc; border-radius: 5px;">
+      <p class="mt-2" style="font-weight: bold;">Input Video</p>
+    </div>
+
+    <!-- 右列：Output Video (GIF) -->
+    <div class="column has-text-centered">
+      <img src="static/multimodal/multimodal2.gif" 
+           alt="Output Video" 
+           style="max-width: 50%; border: 1px solid #ccc; border-radius: 5px;">
+      <p class="mt-2" style="font-weight: bold;">Output Video</p>
+    </div>
+
+  </div>
+
+  <!-- 下方文字说明 -->
+  <div class="content has-text-centered" style="margin-top: 1em;">
+    <p class="instruction-text" style="color:#000;">
+      [Instruction] Add the object in the reference image on the women.
+    </p>
+  </div>
+</section>
+
+
+<section class="section">
+  <h2 class="title is-3 has-text-centered">In-Context Video Editing</h2>
+  
+  <!-- 一行六列 -->
+  <div class="columns is-vcentered is-variable is-2 is-gapless">
+    
+    <!-- 1. Input1 (方形裁剪) -->
+    <div class="column is-2 has-text-centered">
+      <img src="static/incontext/ref1.jpg"
+           alt="Input1"
+           style="width: 160px; height: 160px; object-fit: cover; border: 1px solid #ccc; border-radius: 5px;">
+      <p class="mt-2" style="font-weight: bold;">Input1</p>
+    </div>
+
+    <!-- 2. Demo1 (方形裁剪) -->
+    <div class="column is-2 has-text-centered">
+      <img src="static/incontext/ref2.jpg"
+           alt="Demo1"
+           style="width: 160px; height: 160px; object-fit: cover; border: 1px solid #ccc; border-radius: 5px;">
+      <p class="mt-2" style="font-weight: bold;">Demo1</p>
+    </div>
+
+    <!-- 3. Input2 (方形裁剪) -->
+    <div class="column is-2 has-text-centered">
+      <img src="static/incontext/ref3.jpg"
+           alt="Input2"
+           style="width: 160px; height: 160px; object-fit: cover; border: 1px solid #ccc; border-radius: 5px;">
+      <p class="mt-2" style="font-weight: bold;">Input2</p>
+    </div>
+
+    <!-- 4. Demo2 (方形裁剪) -->
+    <div class="column is-2 has-text-centered">
+      <img src="static/incontext/ref4.jpg"
+           alt="Demo2"
+           style="width: 160px; height: 160px; object-fit: cover; border: 1px solid #ccc; border-radius: 5px;">
+      <p class="mt-2" style="font-weight: bold;">Demo2</p>
+    </div>
+
+    <!-- 5. Input Video (GIF, 不裁剪) -->
+    <div class="column is-2 has-text-centered">
+      <img src="static/incontext/car-turn.gif"
+           alt="Input Video"
+           style="max-width: 70%; border: 1px solid #ccc; border-radius: 5px;">
+      <p class="mt-2" style="font-weight: bold;">Input Video</p>
+    </div>
+
+    <!-- 6. VEGGIE Output Video (GIF, 不裁剪) -->
+    <div class="column is-2 has-text-centered">
+      <img src="static/incontext/incontex1.gif"
+           alt="VEGGIE Output Video"
+           style="max-width: 70%; border: 1px solid #ccc; border-radius: 5px;">
+      <p class="mt-2" style="font-weight: bold;">VEGGIE Output Video</p>
+    </div>
+
+  </div>
+
+
+  <div class="columns is-vcentered is-variable is-2 is-gapless">
+    
+    <!-- 1. Input1 (方形裁剪) -->
+    <div class="column is-2 has-text-centered">
+      <img src="static/incontext/ref5.jpg"
+           alt="Input1"
+           style="width: 160px; height: 160px; object-fit: cover; border: 1px solid #ccc; border-radius: 5px;">
+      <p class="mt-2" style="font-weight: bold;">Input1</p>
+    </div>
+
+    <!-- 2. Demo1 (方形裁剪) -->
+    <div class="column is-2 has-text-centered">
+      <img src="static/incontext/ref6.jpg"
+           alt="Demo1"
+           style="width: 160px; height: 160px; object-fit: cover; border: 1px solid #ccc; border-radius: 5px;">
+      <p class="mt-2" style="font-weight: bold;">Demo1</p>
+    </div>
+
+    <!-- 3. Input2 (方形裁剪) -->
+    <div class="column is-2 has-text-centered">
+      <img src="static/incontext/ref7.jpg"
+           alt="Input2"
+           style="width: 160px; height: 160px; object-fit: cover; border: 1px solid #ccc; border-radius: 5px;">
+      <p class="mt-2" style="font-weight: bold;">Input2</p>
+    </div>
+
+    <!-- 4. Demo2 (方形裁剪) -->
+    <div class="column is-2 has-text-centered">
+      <img src="static/incontext/ref8.jpg"
+           alt="Demo2"
+           style="width: 160px; height: 160px; object-fit: cover; border: 1px solid #ccc; border-radius: 5px;">
+      <p class="mt-2" style="font-weight: bold;">Demo2</p>
+    </div>
+
+    <!-- 5. Input Video (GIF, 不裁剪) -->
+    <div class="column is-2 has-text-centered">
+      <img src="static/incontext/car-turn.gif"
+           alt="Input Video"
+           style="max-width: 70%; border: 1px solid #ccc; border-radius: 5px;">
+      <p class="mt-2" style="font-weight: bold;">Input Video</p>
+    </div>
+
+    <!-- 6. VEGGIE Output Video (GIF, 不裁剪) -->
+    <div class="column is-2 has-text-centered">
+      <img src="static/incontext/incontex2.gif"
+           alt="VEGGIE Output Video"
+           style="max-width: 70%; border: 1px solid #ccc; border-radius: 5px;">
+      <p class="mt-2" style="font-weight: bold;">VEGGIE Output Video</p>
+    </div>
+
+  </div>
+
+</section>
+
+
 
 
 
