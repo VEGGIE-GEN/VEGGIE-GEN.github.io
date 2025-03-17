@@ -14,9 +14,9 @@
 
 /* 让一组 GIF 并排 */
 .gif-pair {
-  display: flex;
+  display: flex !important;       /* 强制启用flex */
   justify-content: center;
-  gap: 10px; /* 控制两张 GIF 之间的间距 */
+  gap: 10px;
 }
 
 .gif-pair div {
