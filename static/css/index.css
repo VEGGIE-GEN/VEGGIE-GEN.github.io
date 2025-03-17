@@ -12,6 +12,39 @@
   justify-content: center;
 }
 
+/* 让一组 GIF 并排 */
+.gif-pair {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* 控制两张 GIF 之间的间距 */
+}
+
+.gif-pair div {
+  text-align: center;
+}
+
+.gif-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 14px;
+}
+
+.shared-caption {
+  font-size: 14px;
+  font-weight: bold;
+  color: #444;
+  margin-top: 10px;
+}
+
+.columns img {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 100%;
+}
+
+
+
 /* 任务类别颜色 */
 .addition { background-color: #f2e17d !important; }  /* 金色 */
 .removal { background-color: #ff6f6d !important; }   /* 橙红色 */
