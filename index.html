@@ -155,11 +155,17 @@
 <section class="hero is-small">
   <div class="body">
     <div class="container">
-      <center>
+      <!-- <center>
         <img src="./static/images/teaser.png" width="70%">
+      </center> -->
+      <center>
+        <video width="70%" controls>
+          <source src="./static/teaser.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </center>
       <div class="content has-text-justified" style="margin: auto; width: 70%;">
-          <b>Figure 1:</b> We propose VEGGIE, a unified versatile video generative model that handles various tasks for both video concept grounding and editing according to user instructions. With VEGGIE, users can locate, add, delete, and change concepts in a given video through diverse instruction formats (direct referring instruction or reasoning-demanding questions). 
+          We propose VEGGIE, a unified versatile video generative model that handles various tasks for both video concept grounding and editing according to user instructions. With VEGGIE, users can locate, add, delete, and change concepts in a given video through diverse instruction formats (direct referring instruction or reasoning-demanding questions). 
           Users can also edit videos with multimodal instruction empowered by MLLM, enabling video editing from a reference image.
       </div>
     </div>
@@ -205,7 +211,7 @@ We further reveal how the multiple tasks help each other and highlight promising
           <img src="./static/images/veggie_method.png">
         </div>
         <p class="content has-text-justified">
-         <b>Figure2: Overview of our proposed end-to-end VEGGIE framework.</b>. Our Multimodal Large Language Model first understands input video
+         <b>Figure2: Overview of our proposed end-to-end VEGGIE framework.</b> Our Multimodal Large Language Model first understands input video
          frames and diverse user instructions, then it generates frame-wise reasoning queries that maintain per-frame editing conditions for the video
          diffusion model. The video diffusion model will render the MLLM-generated conditions to the pixel space for diverse tasks, including video
          editing (add/remove/change), video grounding, and video reasoning segmentation with questions. We only apply diffusion loss for the whole
